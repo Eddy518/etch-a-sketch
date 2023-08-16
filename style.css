@@ -1,0 +1,11 @@
+.container {
+  outline: 1px solid #111;
+  width: 700px;
+  height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid {
+  border: none;
+  outline: 1px solid #000;
+}
