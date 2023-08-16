@@ -11,7 +11,7 @@ function createGrid(x) {
   }
   function setPixel() {
     console.log(this);
-    this.style.backgroundColor = "black";
+    this.style.backgroundColor = "magenta";
     //* this.setAttribute("style", "background-color:black;");
   }
   const squares = document.querySelectorAll(".grid");
@@ -23,5 +23,12 @@ function createGrid(x) {
     square.addEventListener("mouseover", setPixel);
   });
 }
-
-createGrid(16);
+function setGridSize() {
+  const gridSize = +prompt("Enter grid size 100 and below: ");
+  if (gridSize <= 100) {
+    createGrid(gridSize);
+  } else {
+    alert("input is above 100!");
+  }
+}
+setGridSize();
