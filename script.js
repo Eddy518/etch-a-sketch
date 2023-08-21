@@ -29,7 +29,14 @@ function createNewGrid() {
   console.log("Create new grid has been called");
   const oldGrid = document.querySelectorAll("#grid");
   oldGrid.forEach((square) => square.remove());
-  const newSquares = +prompt("Enter size of the new grid");
+  let newSquares = +prompt("Enter size of the new grid");
+  if (newSquares > 100) {
+    console.log(`type of newSquares is ${typeof newSquares}`);
+    console.log(`console.log ${newSquares}`);
+    alert("Please select a number of 100 or below");
+    newSquares = null; //* RESETS NEWSQUARE VARIABLE
+    createNewGrid();
+  }
   createGrid(newSquares);
 }
 function clearGrid() {
