@@ -2,10 +2,10 @@ const container = document.querySelector("#container");
 const resetButton = document.querySelector("#reset");
 const newGridButton = document.querySelector("#size");
 
-function createGrid(x) {
+function createGrid(size) {
   let grid;
-  for (let rows = 1; rows <= x; rows++) {
-    for (let cols = 1; cols <= x; cols++) {
+  for (let rows = 1; rows <= size; rows++) {
+    for (let cols = 1; cols <= size; cols++) {
       grid = document.createElement("div");
       container.appendChild(grid);
       grid.classList.add("grid");
@@ -15,7 +15,7 @@ function createGrid(x) {
   const squares = document.querySelectorAll("#grid");
   squares.forEach((square) => {
     // * ADD A WIDTH AND HEIGHT TO EACH GRID
-    let dimensions = 700 / x;
+    let dimensions = 700 / size;
     square.style.width = `${dimensions}px`;
     square.style.height = `${dimensions}px`;
     square.addEventListener("mouseover", setPixel);
@@ -26,13 +26,13 @@ function setPixel() {
   this.classList.add("pixel");
 }
 function createNewGrid() {
-  console.log("Create new grid has been called");
+  // console.log("Create new grid has been called");
   const oldGrid = document.querySelectorAll("#grid");
-  oldGrid.forEach((square) => square.remove());
+  oldGrid.forEach((square) => square.remove()); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
   let newSquares = +prompt("Enter size of the new grid");
   if (newSquares > 100) {
-    console.log(`type of newSquares is ${typeof newSquares}`);
-    console.log(`console.log ${newSquares}`);
+    // console.log(`type of newSquares is ${typeof newSquares}`);
+    //console.log(`console.log ${newSquares}`);
     alert("Please select a number of 100 or below");
     newSquares = null; //* RESETS NEWSQUARE VARIABLE
     createNewGrid();
@@ -40,7 +40,7 @@ function createNewGrid() {
   createGrid(newSquares);
 }
 function clearGrid() {
-  console.log("You clicked clear grid");
+  //console.log("You clicked clear grid");
   const squares = document.querySelectorAll("#grid");
   squares.forEach((square) => {
     square.classList.remove("pixel");
