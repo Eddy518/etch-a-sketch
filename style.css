@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@600&family=Roboto:ital,wght@1,500&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -19,9 +20,10 @@
 button {
   padding: 10px 14px;
   background-color: rgb(9, 21, 17);
-  color: honeydew;
+  color: rgb(199, 218, 199);
   border: none;
-  font-size: 16px;
+  font-size: 20px;
+  font-family: "Handjet", cursive;
 }
 button:hover {
   cursor: pointer;
