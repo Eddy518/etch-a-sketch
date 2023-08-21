@@ -1,4 +1,6 @@
 const container = document.querySelector("#container");
+const resetButton = document.querySelector("#reset");
+const newGridButton = document.querySelector("#size");
 
 function createGrid(x) {
   let grid;
@@ -7,14 +9,10 @@ function createGrid(x) {
       grid = document.createElement("div");
       container.appendChild(grid);
       grid.classList.add("grid");
+      grid.setAttribute("id", "grid");
     }
   }
-  function setPixel() {
-    console.log(this);
-    this.style.backgroundColor = "magenta";
-    //* this.setAttribute("style", "background-color:black;");
-  }
-  const squares = document.querySelectorAll(".grid");
+  const squares = document.querySelectorAll("#grid");
   squares.forEach((square) => {
     // * ADD A WIDTH AND HEIGHT TO EACH GRID
     let dimensions = 700 / x;
@@ -23,12 +21,16 @@ function createGrid(x) {
     square.addEventListener("mouseover", setPixel);
   });
 }
-function setGridSize() {
-  const gridSize = +prompt("Enter grid size 100 and below: ");
-  if (gridSize <= 100) {
-    createGrid(gridSize);
-  } else {
-    alert("input is above 100!");
-  }
+function setPixel() {
+  // console.log(this);
+  this.classList.add("pixel");
 }
-setGridSize();
+function createNewGrid() {
+  console.log("Create new grid has been called");
+  const oldGrid = document.querySelectorAll("#grid");
+  oldGrid.forEach((square) => square.remove());
+  const newSquares = +prompt("Enter size of the new grid");
+  createGrid(newSquares);
+}
+newGridButton.addEventListener("click", createNewGrid);
+createGrid(16);

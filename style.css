@@ -7,8 +7,12 @@
   height: 700px;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 .grid {
   border: none;
   outline: 1px solid #000;
+}
+.pixel {
+  background-color: #000;
 }
