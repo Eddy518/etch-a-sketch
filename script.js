@@ -32,5 +32,13 @@ function createNewGrid() {
   const newSquares = +prompt("Enter size of the new grid");
   createGrid(newSquares);
 }
+function clearGrid() {
+  console.log("You clicked clear grid");
+  const squares = document.querySelectorAll("#grid");
+  squares.forEach((square) => {
+    square.classList.remove("pixel");
+  });
+}
+resetButton.addEventListener("click", clearGrid);
 newGridButton.addEventListener("click", createNewGrid);
 createGrid(16);

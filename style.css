@@ -16,3 +16,16 @@
 .pixel {
   background-color: #000;
 }
+button {
+  padding: 10px 14px;
+  background-color: rgb(9, 21, 17);
+  color: honeydew;
+  border: none;
+  font-size: 16px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: rgb(96, 52, 36);
+  color: burlywood;
+  box-shadow: 2px 2px 4px rgb(96, 52, 36);
+}
