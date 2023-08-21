@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Handjet:wght@600&family=Roboto:ital,wght@1,500&display=swap");
 * {
   box-sizing: border-box;
+  color-scheme: dark;
 }
 .container {
-  outline: 1px solid #111;
-  width: 700px;
-  height: 700px;
+  outline: 8px solid #504324;
+  width: 500px;
+  height: 500px;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;

@@ -15,7 +15,7 @@ function createGrid(size) {
   const squares = document.querySelectorAll("#grid");
   squares.forEach((square) => {
     // * ADD A WIDTH AND HEIGHT TO EACH GRID
-    let dimensions = 700 / size;
+    let dimensions = 500 / size;
     square.style.width = `${dimensions}px`;
     square.style.height = `${dimensions}px`;
     square.addEventListener("mouseover", setPixel);
@@ -30,14 +30,19 @@ function createNewGrid() {
   const oldGrid = document.querySelectorAll("#grid");
   oldGrid.forEach((square) => square.remove()); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
   let newSquares = +prompt("Enter size of the new grid");
-  if (newSquares > 100) {
+  if (newSquares < 100) {
+    createGrid(newSquares);
+  } else if (newSquares > 100) {
     // console.log(`type of newSquares is ${typeof newSquares}`);
     //console.log(`console.log ${newSquares}`);
     alert("Please select a number of 100 or below");
     newSquares = null; //* RESETS NEWSQUARE VARIABLE
     createNewGrid();
+  } else {
+    alert("invalid");
+    newSquares = null;
+    createNewGrid();
   }
-  createGrid(newSquares);
 }
 function clearGrid() {
   //console.log("You clicked clear grid");
