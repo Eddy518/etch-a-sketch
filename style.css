@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Handjet:wght@600&family=Roboto:ital,wght@1,500&display=swap");
 * {
   box-sizing: border-box;
-  color-scheme: dark;
+  /*color-scheme: dark;*/
 }
 .grid-container {
   outline: 8px solid #504324;
@@ -33,4 +33,8 @@ button:hover {
   background-color: rgb(96, 52, 36);
   color: burlywood;
   box-shadow: 2px 2px 4px rgb(96, 52, 36);
+}
+.show-selection {
+  background-color: rgb(96, 52, 36);
+  color: burlywood;
 }
