@@ -50,19 +50,24 @@ function createNewGrid() {
   // console.log("Create new grid has been called");
   const oldGrid = document.querySelectorAll("#grid");
   oldGrid.forEach((square) => square.remove()); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
-  let newSquares = +prompt("Enter size of the new grid");
-  if (newSquares < 100) {
-    createGrid(newSquares);
-  } else if (newSquares > 100) {
-    // console.log(`type of newSquares is ${typeof newSquares}`);
-    //console.log(`console.log ${newSquares}`);
-    alert("Please select a number of 100 or below");
-    newSquares = null; //* RESETS NEWSQUARE VARIABLE
-    createNewGrid();
+  let newSquares = prompt("Enter size of the new grid");
+  if (!(newSquares === null)) {
+    Number(newSquares);
+    if (newSquares < 100) {
+      createGrid(newSquares);
+    } else if (newSquares > 100) {
+      console.log(`type of newSquares is ${typeof newSquares}`);
+      console.log(`console.log ${newSquares}`);
+      alert("Please select a number of 100 or below");
+      newSquares = null; //* RESETS NEWSQUARE VARIABLE
+      createNewGrid();
+    } else {
+      alert("invalid");
+      newSquares = null;
+      createNewGrid();
+    }
   } else {
-    alert("invalid");
-    newSquares = null;
-    createNewGrid();
+    createGrid(16);
   }
 }
 function clearGrid() {
@@ -88,3 +93,4 @@ multiColorButton.addEventListener("click", setRandomColor);
 
 createGrid(16);
 // TODO ADD CODE TO RESET COLOR TO BLACK AFTER RANDOM COLOR MODE
+// TODO FIX CANCEL OPTION TO RESET BACK TO 16 WHEN USER CANCELS INPUT
