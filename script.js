@@ -4,6 +4,7 @@ const newGridButton = document.querySelector("#size-btn");
 const colorPicker = document.querySelector("#color-picker");
 const multiColorButton = document.querySelector("#multi-color-btn");
 const fillRandomColorBtn = document.querySelector("#fill-random-color-btn");
+const eraserBtn = document.querySelector("#eraser-btn");
 
 function createGrid(size) {
   let grid;
@@ -27,6 +28,16 @@ function createGrid(size) {
 function setPixel() {
   // console.log(this);
   this.classList.add("pixel");
+}
+function setEraser() {
+  const oldGrid = document.querySelectorAll("#grid");
+  oldGrid.forEach((grid) => {
+    grid.addEventListener("mouseover", () => {
+      //console.log(grid);
+      grid.classList.remove("pixel");
+      grid.style.backgroundColor = "transparent";
+    });
+  });
 }
 function setColor(e) {
   const oldGrid = document.querySelectorAll("#grid");
@@ -98,6 +109,7 @@ resetBtn.addEventListener("click", clearGrid);
 fillRandomColorBtn.addEventListener("click", setRandomFillColor);
 newGridButton.addEventListener("click", createNewGrid);
 multiColorButton.addEventListener("click", setRandomColor);
+eraserBtn.addEventListener("click", setEraser);
 /* * multiColorButton.addEventListener("click", showSelectedButton);*/
 
 createGrid(16);
