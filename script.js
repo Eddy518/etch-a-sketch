@@ -28,6 +28,15 @@ function setPixel() {
   // console.log(this);
   this.classList.add("pixel");
 }
+function setColor(e) {
+  const oldGrid = document.querySelectorAll("#grid");
+  oldGrid.forEach((grid) => {
+    grid.addEventListener("mouseover", () => {
+      grid.style.backgroundColor = e.target.value;
+    });
+  });
+  console.log(e);
+}
 function setRandomColor() {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   const oldGrid = document.querySelectorAll("#grid");
@@ -67,7 +76,7 @@ function createNewGrid() {
       createNewGrid();
     }
   } else {
-    createGrid(16);
+    createGrid(16); //* RESETS TO DEFAULT IF USER CLICKS CANCEL
   }
 }
 function clearGrid() {
@@ -92,5 +101,6 @@ multiColorButton.addEventListener("click", setRandomColor);
 /* * multiColorButton.addEventListener("click", showSelectedButton);*/
 
 createGrid(16);
+colorPicker.addEventListener("change", setColor);
+colorPicker.addEventListener("input", setColor);
 // TODO ADD CODE TO RESET COLOR TO BLACK AFTER RANDOM COLOR MODE
-// TODO FIX CANCEL OPTION TO RESET BACK TO 16 WHEN USER CANCELS INPUT
