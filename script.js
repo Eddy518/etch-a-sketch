@@ -1,6 +1,9 @@
-const container = document.querySelector("#container");
-const resetButton = document.querySelector("#reset");
-const newGridButton = document.querySelector("#size");
+const container = document.querySelector("#grid-container");
+const resetBtn = document.querySelector("#reset-btn");
+const newGridButton = document.querySelector("#size-btn");
+const colorPicker = document.querySelector("#color-picker");
+const multiColorButton = document.querySelector("#multi-color-btn");
+const fillRandomColorBtn = document.querySelector("#fill-random-color-btn");
 
 function createGrid(size) {
   let grid;
@@ -18,13 +21,31 @@ function createGrid(size) {
     let dimensions = 500 / size;
     square.style.width = `${dimensions}px`;
     square.style.height = `${dimensions}px`;
-    square.addEventListener("mouseover", setPixel);
+    square.addEventListener("mouseover", setPixel); // *DEFAULT SET BGCOLOR TO BLACK
   });
 }
 function setPixel() {
   // console.log(this);
   this.classList.add("pixel");
 }
+function setRandomColor() {
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  const oldGrid = document.querySelectorAll("#grid");
+  oldGrid.forEach((grid) => {
+    grid.addEventListener("mouseover", () => {
+      grid.style.backgroundColor = "#" + randomColor;
+    });
+  });
+}
+function setRandomFillColor() {
+  console.log("clicked random colors btn");
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  const oldGrid = document.querySelectorAll("#grid");
+  oldGrid.forEach((grid) => {
+    grid.style.backgroundColor = "#" + randomColor;
+  });
+}
+
 function createNewGrid() {
   // console.log("Create new grid has been called");
   const oldGrid = document.querySelectorAll("#grid");
@@ -49,8 +70,21 @@ function clearGrid() {
   const squares = document.querySelectorAll("#grid");
   squares.forEach((square) => {
     square.classList.remove("pixel");
+    square.style.backgroundColor = "";
   });
 }
-resetButton.addEventListener("click", clearGrid);
+/* function showSelectedButton() {
+  multiColorButton.setAttribute(
+    "style",
+    "backgound:rgb(96, 52, 36);color:burlywood;"
+  );
+}
+*/
+resetBtn.addEventListener("click", clearGrid);
+fillRandomColorBtn.addEventListener("click", setRandomFillColor);
 newGridButton.addEventListener("click", createNewGrid);
+multiColorButton.addEventListener("click", setRandomColor);
+/* * multiColorButton.addEventListener("click", showSelectedButton);*/
+
 createGrid(16);
+// TODO ADD CODE TO RESET COLOR TO BLACK AFTER RANDOM COLOR MODE
