@@ -5,6 +5,7 @@ const colorPicker = document.querySelector("#color-picker");
 const multiColorButton = document.querySelector("#multi-color-btn");
 const fillRandomColorBtn = document.querySelector("#fill-random-color-btn");
 const eraserBtn = document.querySelector("#eraser-btn");
+const outlineBtn = document.querySelector("#outline-boxes-btn");
 
 function createGrid(size) {
   let grid;
@@ -29,6 +30,12 @@ function setPixel() {
   // console.log(this);
   this.classList.add("pixel");
 }
+function setOutline() {
+  const oldGrid = document.querySelectorAll("#grid");
+  oldGrid.forEach((grid) => {
+    grid.classList.toggle("grid-outline");
+  });
+}
 function setEraser() {
   const oldGrid = document.querySelectorAll("#grid");
   oldGrid.forEach((grid) => {
@@ -46,7 +53,7 @@ function setColor(e) {
       grid.style.backgroundColor = e.target.value;
     });
   });
-  console.log(e);
+  // console.log(e);
 }
 function setRandomColor() {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -58,7 +65,7 @@ function setRandomColor() {
   });
 }
 function setRandomFillColor() {
-  console.log("clicked random colors btn");
+  //console.log("clicked random colors btn");
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   const oldGrid = document.querySelectorAll("#grid");
   oldGrid.forEach((grid) => {
@@ -110,9 +117,11 @@ fillRandomColorBtn.addEventListener("click", setRandomFillColor);
 newGridButton.addEventListener("click", createNewGrid);
 multiColorButton.addEventListener("click", setRandomColor);
 eraserBtn.addEventListener("click", setEraser);
+outlineBtn.addEventListener("click", setOutline);
 /* * multiColorButton.addEventListener("click", showSelectedButton);*/
 
 createGrid(16);
 colorPicker.addEventListener("change", setColor);
 colorPicker.addEventListener("input", setColor);
 // TODO ADD CODE TO RESET COLOR TO BLACK AFTER RANDOM COLOR MODE
+// TODO FIX RETURN COLOR AFTER USING ERASER
