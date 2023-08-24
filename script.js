@@ -7,6 +7,7 @@ const fillRandomColorBtn = document.querySelector("#fill-random-color-btn");
 const eraserBtn = document.querySelector("#eraser-btn");
 const outlineBtn = document.querySelector("#outline-boxes-btn");
 const rainbowModeBtn = document.querySelector("#rainbow-colors-btn");
+const defaultColorBtn = document.querySelector("#default-color-btn");
 //const selections = document.querySelectorAll("button");
 
 function createGrid(size) {
@@ -31,6 +32,14 @@ function createGrid(size) {
 function setPixel() {
   // console.log(this);
   this.classList.add("pixel");
+}
+function setDefaultColor() {
+  const oldGrid = document.querySelectorAll("#grid");
+  oldGrid.forEach((grid) => {
+    grid.addEventListener("mouseover", () => {
+      grid.style.backgroundColor = "black";
+    });
+  });
 }
 function setRainbowMode() {
   const colorsArray = [
@@ -143,6 +152,7 @@ multiColorButton.addEventListener("click", setRandomColor);
 eraserBtn.addEventListener("click", setEraser);
 outlineBtn.addEventListener("click", setOutline);
 rainbowModeBtn.addEventListener("click", setRainbowMode);
+defaultColorBtn.addEventListener("click", setDefaultColor);
 
 createGrid(16);
 colorPicker.addEventListener("change", setColor);
@@ -152,4 +162,5 @@ colorPicker.addEventListener("click", setColor); // * APPLIES THE DEFAULT COLOR 
 // TODO ADD CODE TO RESET COLOR TO BLACK AFTER RANDOM COLOR MODE
 // TODO FIX RETURN COLOR AFTER USING ERASER
 // TODO FIX ERASER TO ERASE FILL COLOR WHEN USING FILL MODE
+// TODO REMOVE PREVIOUS COLOR FROM PREVIOUS BUTTON WHEN NEW COLOR FROM NEW BUTTON IS ACTIVATED
 //! ERASER
