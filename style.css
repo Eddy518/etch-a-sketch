@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Handjet:wght@600&family=Roboto:ital,wght@1,500&display=swap");
 * {
   box-sizing: border-box;
-  /*color-scheme: dark;*/
+  color-scheme: dark;
+  margin: 0;
+  padding: 0;
 }
 .grid-container {
   outline: 8px solid #504324;
@@ -10,9 +12,16 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 40px;
 }
 .grid {
   border: none;
+  /* border-radius: 12%;*/
+  /*border-radius: 0 100% 100% 0 / 50%;*/
+  /*transform: skew(23deg);*/
+  /* border-radius: 50%;*/
+  /*border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;*/
 }
 .grid-outline {
   outline: 1px solid #000;
@@ -37,4 +46,12 @@ button:hover {
 .show-selection {
   background-color: rgb(96, 52, 36);
   color: burlywood;
+}
+.header {
+  color: #504324;
+  text-align: center;
+}
+.nav {
+  display: flex;
+  justify-content: center;
 }
