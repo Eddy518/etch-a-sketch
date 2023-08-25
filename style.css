@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Handjet:wght@600&family=Roboto:ital,wght@1,500&display=swap");
+@font-face {
+  font-family: "Chameron";
+  src: url("assets/fonts/Chameron\ .ttf");
+}
+h3 {
+  font-family: "Chameron", Verdana, sans-serif;
+}
 * {
   box-sizing: border-box;
   color-scheme: dark;
