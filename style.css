@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Handjet:wght@600&family=Roboto:ital,wght@1,500&display=swap");
 @font-face {
+  /* * ADD CUSTOM FONT*/
   font-family: "Chameron";
   src: url("assets/fonts/Chameron\ .ttf");
 }
@@ -35,14 +36,17 @@ h1 {
 }
 button {
   padding: 10px 14px;
-  background-color: rgb(9, 21, 17);
-  color: rgb(199, 218, 199);
+  /*background-color: rgb(9, 21, 17);*/
+  background-color: rgba(173, 135, 102, 0.025);
+  color: saddlebrown;
+  /*color: rgb(199, 218, 199);*/
   border: none;
-  font-size: 20px;
+  font-size: 22px;
   font-family: "Handjet", cursive;
+  font-weight: bold;
 }
 button:hover:not(.color-picker) {
-  /* IGNORE COLORPICKER BUTTON */
+  /* * IGNORE COLORPICKER BUTTON */
   cursor: pointer;
   background-color: rgb(96, 52, 36);
   color: burlywood;
@@ -67,19 +71,24 @@ button:hover:not(.color-picker) {
 .main-content {
   display: flex;
   gap: 70px;
-  border: 4px solid firebrick;
+  /* border: 4px solid firebrick;*/
   padding: 40px;
   justify-content: center;
 }
 /* DEBUGGING */
 .container {
-  border: 4px solid salmon;
+  /*border: 4px solid salmon;*/
   height: 100vh;
 }
 .nav {
-  border: 4px solid saddlebrown;
+  /* border: 4px solid saddlebrown;*/
   padding: 27px;
 }
 .btn-section {
-  border: 2px solid saddlebrown;
+  /* border: 2px solid saddlebrown;*/
+}
+.nav h1 {
+  /* background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;*/
 }
