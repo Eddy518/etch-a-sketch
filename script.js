@@ -8,6 +8,7 @@ const eraserBtn = document.querySelector("#eraser-btn");
 const outlineBtn = document.querySelector("#outline-boxes-btn");
 const rainbowModeBtn = document.querySelector("#rainbow-colors-btn");
 const defaultColorBtn = document.querySelector("#default-color-btn");
+const clearBtn = document.querySelector("#clear-btn");
 //const selections = document.querySelectorAll("button");
 
 function createGrid(size) {
@@ -128,6 +129,13 @@ function createNewGrid() {
     createGrid(16); //* RESETS TO DEFAULT IF USER CLICKS CANCEL
   }
 }
+function resetGrid() {
+  const oldGrid = document.querySelectorAll("#grid");
+  oldGrid.forEach((grid) => {
+    grid.remove();
+  });
+  createGrid(16);
+}
 function clearGrid() {
   //console.log("You clicked clear grid");
   const squares = document.querySelectorAll("#grid");
@@ -145,7 +153,8 @@ selections.forEach((selection) => {
   });
 });
 */
-resetBtn.addEventListener("click", clearGrid);
+resetBtn.addEventListener("click", resetGrid);
+clearBtn.addEventListener("click", clearGrid);
 fillRandomColorBtn.addEventListener("click", setRandomFillColor);
 newGridButton.addEventListener("click", createNewGrid);
 multiColorButton.addEventListener("click", setRandomColor);
