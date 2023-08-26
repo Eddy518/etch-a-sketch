@@ -9,6 +9,9 @@ const outlineBtn = document.querySelector("#outline-boxes-btn");
 const rainbowModeBtn = document.querySelector("#rainbow-colors-btn");
 const defaultColorBtn = document.querySelector("#default-color-btn");
 const clearBtn = document.querySelector("#clear-btn");
+const gridSlider = document.querySelector("#grid-slider");
+const gridSizeDisplay = document.querySelector("#grid-size-value");
+gridSizeDisplay.textContent = gridSlider.value; // *DISPLAYS THE CURRENT VALUE
 //const selections = document.querySelectorAll("button");
 
 function createGrid(size) {
@@ -105,6 +108,18 @@ function setRandomFillColor() {
   });
 }
 
+function getSize(e) {
+  console.log(e);
+  gridSizeDisplay.textContent = e.target.value;
+  setTimeout(() => {
+    const oldGrid = document.querySelectorAll("#grid");
+    oldGrid.forEach((grid) => {
+      grid.remove(); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
+    });
+    createGrid(e.target.value);
+  }, 300); // * CREATE THE GRID AFTER 300MS
+}
+
 function createNewGrid() {
   // console.log("Create new grid has been called");
   const oldGrid = document.querySelectorAll("#grid");
@@ -156,6 +171,7 @@ selections.forEach((selection) => {
 resetBtn.addEventListener("click", resetGrid);
 clearBtn.addEventListener("click", clearGrid);
 fillRandomColorBtn.addEventListener("click", setRandomFillColor);
+gridSlider.addEventListener("input", getSize);
 newGridButton.addEventListener("click", createNewGrid);
 multiColorButton.addEventListener("click", setRandomColor);
 eraserBtn.addEventListener("click", setEraser);
@@ -173,19 +189,3 @@ colorPicker.addEventListener("click", setColor); // * APPLIES THE DEFAULT COLOR 
 // TODO FIX ERASER TO ERASE FILL COLOR WHEN USING FILL MODE
 // TODO REMOVE PREVIOUS COLOR FROM PREVIOUS BUTTON WHEN NEW COLOR FROM NEW BUTTON IS ACTIVATED
 //! ERASER
-
-const gridSlider = document.querySelector("#grid-slider");
-const gridSizeDisplay = document.querySelector("#grid-size-value");
-gridSizeDisplay.textContent = gridSlider.value; // *DISPLAYS THE CURRENT VALUE
-function getSize(e) {
-  console.log(e);
-  gridSizeDisplay.textContent = e.target.value;
-  setTimeout(() => {
-    const oldGrid = document.querySelectorAll("#grid");
-    oldGrid.forEach((grid) => {
-      grid.remove(); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
-    });
-    createGrid(e.target.value);
-  }, 300);
-}
-gridSlider.addEventListener("input", getSize);
