@@ -173,3 +173,19 @@ colorPicker.addEventListener("click", setColor); // * APPLIES THE DEFAULT COLOR 
 // TODO FIX ERASER TO ERASE FILL COLOR WHEN USING FILL MODE
 // TODO REMOVE PREVIOUS COLOR FROM PREVIOUS BUTTON WHEN NEW COLOR FROM NEW BUTTON IS ACTIVATED
 //! ERASER
+
+const gridSlider = document.querySelector("#grid-slider");
+const gridSizeDisplay = document.querySelector("#grid-size-value");
+gridSizeDisplay.textContent = gridSlider.value; // *DISPLAYS THE CURRENT VALUE
+function getSize(e) {
+  console.log(e);
+  gridSizeDisplay.textContent = e.target.value;
+  setTimeout(() => {
+    const oldGrid = document.querySelectorAll("#grid");
+    oldGrid.forEach((grid) => {
+      grid.remove(); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
+    });
+    createGrid(e.target.value);
+  }, 300);
+}
+gridSlider.addEventListener("input", getSize);

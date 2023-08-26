@@ -45,8 +45,8 @@ button {
   font-family: "Handjet", cursive;
   font-weight: bold;
 }
-button:hover:not(.color-picker) {
-  /* * IGNORE COLORPICKER BUTTON */
+button:hover:not(.color-picker, .grid-slider-btn) {
+  /* * IGNORE COLORPICKER AND GRIDSLIDER BUTTON  */
   cursor: pointer;
   background-color: rgba(96, 52, 36, 0.383);
   color: burlywood;
@@ -83,4 +83,7 @@ button:hover:not(.color-picker) {
 .nav {
   /* border: 4px solid saddlebrown;*/
   padding: 27px;
+}
+input[type="range"] {
+  accent-color: saddlebrown;
 }
