@@ -1,6 +1,5 @@
 const container = document.querySelector("#grid-container");
 const resetBtn = document.querySelector("#reset-btn");
-////const newGridButton = document.querySelector("#size-btn");
 const colorPicker = document.querySelector("#color-picker");
 const multiColorButton = document.querySelector("#multi-color-btn");
 const fillRandomColorBtn = document.querySelector("#fill-random-color-btn");
@@ -12,7 +11,6 @@ const clearBtn = document.querySelector("#clear-btn");
 const gridSlider = document.querySelector("#grid-slider");
 const gridSizeDisplay = document.querySelector("#grid-size-value");
 gridSizeDisplay.textContent = gridSlider.value; // *DISPLAYS THE CURRENT VALUE
-//const selections = document.querySelectorAll("button");
 
 function createGrid(size) {
   let grid;
@@ -34,7 +32,6 @@ function createGrid(size) {
   });
 }
 function setPixel() {
-  // console.log(this);
   this.classList.add("pixel");
 }
 function setDefaultColor() {
@@ -75,7 +72,6 @@ function setEraser() {
   const oldGrid = document.querySelectorAll("#grid");
   oldGrid.forEach((grid) => {
     grid.addEventListener("mouseover", () => {
-      //console.log(grid);
       grid.classList.remove("pixel");
       grid.style.backgroundColor = "transparent";
     });
@@ -100,7 +96,6 @@ function setRandomColor() {
   });
 }
 function setRandomFillColor() {
-  //console.log("clicked random colors btn");
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   const oldGrid = document.querySelectorAll("#grid");
   oldGrid.forEach((grid) => {
@@ -119,32 +114,6 @@ function getSize(e) {
     createGrid(e.target.value);
   }, 100); // * CREATE THE GRID AFTER 300MS
 }
-/* 
-function createNewGrid() {
-//  // console.log("Create new grid has been called");
-//  const oldGrid = document.querySelectorAll("#grid");
-//  oldGrid.forEach((square) => square.remove()); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
-//  let newSquares = prompt("Enter size of the new grid");
-//  if (!(newSquares === null)) {
-//    Number(newSquares);
-//    if (newSquares < 100) {
-//      createGrid(newSquares);
-//    } else if (newSquares > 100) {
-//      console.log(`type of newSquares is ${typeof newSquares}`);
-//      console.log(`console.log ${newSquares}`);
-//      alert("Please select a number of 100 or below");
-//      newSquares = null; //* RESETS NEWSQUARE VARIABLE
-//      createNewGrid();
-//    } else {
-//      alert("invalid");
-//      newSquares = null;
-//      createNewGrid();
-//    }
-//  } else {
-//    createGrid(16); //* RESETS TO DEFAULT IF USER CLICKS CANCEL
-  }
-}
-*/
 function resetGrid() {
   const oldGrid = document.querySelectorAll("#grid");
   oldGrid.forEach((grid) => {
@@ -153,27 +122,16 @@ function resetGrid() {
   createGrid(16);
 }
 function clearGrid() {
-  //console.log("You clicked clear grid");
   const squares = document.querySelectorAll("#grid");
   squares.forEach((square) => {
     square.classList.remove("pixel");
     square.style.backgroundColor = "";
   });
 }
-/*
-///RETAIN BACKGROUND COLOR AFTER CLICKING A BUTTON
-selections.forEach((selection) => {
-  selection.addEventListener("click", () => {
-    selection.classList.toggle("show-selection");
-    console.log(selection);
-  });
-});
-*/
 resetBtn.addEventListener("click", resetGrid);
 clearBtn.addEventListener("click", clearGrid);
 fillRandomColorBtn.addEventListener("click", setRandomFillColor);
 gridSlider.addEventListener("input", getSize);
-////newGridButton.addEventListener("click", createNewGrid);
 multiColorButton.addEventListener("click", setRandomColor);
 eraserBtn.addEventListener("click", setEraser);
 outlineBtn.addEventListener("click", setOutline);
