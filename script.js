@@ -1,6 +1,6 @@
 const container = document.querySelector("#grid-container");
 const resetBtn = document.querySelector("#reset-btn");
-const newGridButton = document.querySelector("#size-btn");
+////const newGridButton = document.querySelector("#size-btn");
 const colorPicker = document.querySelector("#color-picker");
 const multiColorButton = document.querySelector("#multi-color-btn");
 const fillRandomColorBtn = document.querySelector("#fill-random-color-btn");
@@ -119,31 +119,32 @@ function getSize(e) {
     createGrid(e.target.value);
   }, 300); // * CREATE THE GRID AFTER 300MS
 }
-
+/* 
 function createNewGrid() {
-  // console.log("Create new grid has been called");
-  const oldGrid = document.querySelectorAll("#grid");
-  oldGrid.forEach((square) => square.remove()); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
-  let newSquares = prompt("Enter size of the new grid");
-  if (!(newSquares === null)) {
-    Number(newSquares);
-    if (newSquares < 100) {
-      createGrid(newSquares);
-    } else if (newSquares > 100) {
-      console.log(`type of newSquares is ${typeof newSquares}`);
-      console.log(`console.log ${newSquares}`);
-      alert("Please select a number of 100 or below");
-      newSquares = null; //* RESETS NEWSQUARE VARIABLE
-      createNewGrid();
-    } else {
-      alert("invalid");
-      newSquares = null;
-      createNewGrid();
-    }
-  } else {
-    createGrid(16); //* RESETS TO DEFAULT IF USER CLICKS CANCEL
+//  // console.log("Create new grid has been called");
+//  const oldGrid = document.querySelectorAll("#grid");
+//  oldGrid.forEach((square) => square.remove()); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
+//  let newSquares = prompt("Enter size of the new grid");
+//  if (!(newSquares === null)) {
+//    Number(newSquares);
+//    if (newSquares < 100) {
+//      createGrid(newSquares);
+//    } else if (newSquares > 100) {
+//      console.log(`type of newSquares is ${typeof newSquares}`);
+//      console.log(`console.log ${newSquares}`);
+//      alert("Please select a number of 100 or below");
+//      newSquares = null; //* RESETS NEWSQUARE VARIABLE
+//      createNewGrid();
+//    } else {
+//      alert("invalid");
+//      newSquares = null;
+//      createNewGrid();
+//    }
+//  } else {
+//    createGrid(16); //* RESETS TO DEFAULT IF USER CLICKS CANCEL
   }
 }
+*/
 function resetGrid() {
   const oldGrid = document.querySelectorAll("#grid");
   oldGrid.forEach((grid) => {
@@ -172,7 +173,7 @@ resetBtn.addEventListener("click", resetGrid);
 clearBtn.addEventListener("click", clearGrid);
 fillRandomColorBtn.addEventListener("click", setRandomFillColor);
 gridSlider.addEventListener("input", getSize);
-newGridButton.addEventListener("click", createNewGrid);
+////newGridButton.addEventListener("click", createNewGrid);
 multiColorButton.addEventListener("click", setRandomColor);
 eraserBtn.addEventListener("click", setEraser);
 outlineBtn.addEventListener("click", setOutline);

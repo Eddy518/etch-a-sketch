@@ -84,6 +84,6 @@ button:hover:not(.color-picker, .grid-slider-btn) {
   /* border: 4px solid saddlebrown;*/
   padding: 27px;
 }
-input[type="range"] {
+input[type="range" i] {
   accent-color: saddlebrown;
 }
