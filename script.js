@@ -138,13 +138,8 @@ outlineBtn.addEventListener("click", setOutline);
 rainbowModeBtn.addEventListener("click", setRainbowMode);
 defaultColorBtn.addEventListener("click", setDefaultColor);
 
-createGrid(16);
 colorPicker.addEventListener("change", setColor);
 colorPicker.addEventListener("input", setColor);
 colorPicker.addEventListener("click", setColor); // * APPLIES THE DEFAULT COLOR ON THE COLORPICKER TO THE GRID
 
-// TODO ADD CODE TO RESET COLOR TO BLACK AFTER RANDOM COLOR MODE
-// TODO FIX RETURN COLOR AFTER USING ERASER
-// TODO FIX ERASER TO ERASE FILL COLOR WHEN USING FILL MODE
-// TODO REMOVE PREVIOUS COLOR FROM PREVIOUS BUTTON WHEN NEW COLOR FROM NEW BUTTON IS ACTIVATED
-//! ERASER
+createGrid(16); // * CREATE A 16 BY 16 GRID BY DEFAULT OR REFRESH
