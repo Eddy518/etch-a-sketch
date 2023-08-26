@@ -117,7 +117,7 @@ function getSize(e) {
       grid.remove(); // * REMOVE THE OLD GRID BEFORE CREATING A NEW GRID
     });
     createGrid(e.target.value);
-  }, 300); // * CREATE THE GRID AFTER 300MS
+  }, 100); // * CREATE THE GRID AFTER 300MS
 }
 /* 
 function createNewGrid() {
