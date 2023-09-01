@@ -2,7 +2,7 @@
 
 # TABLE OF CONTENTS
 
-1.[Description](#Description)<br> 2.[Purpose](#Purpose)<br> 3.[Features](#Features)<br> 4.[Usage](#Usage)<br>5.[Where to Play](#WhereToPlay)
+1.[Description](#Description)<br> 2.[Purpose](#Purpose)<br> 3.[Features](#Features)<br> 4.[Usage](#Usage)<br>5.[Where to Play](#where-to-play)
 
 # Description
 
