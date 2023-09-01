@@ -2,7 +2,7 @@
 
 # TABLE OF CONTENTS
 
-1.[Description](#Description)<br> 2.[Purpose](#Purpose)<br> 3.[Features](#Features)<br> 4.[Usage](#Usage)<br>5.[Where to Play](#where-to-play)
+1.[Description](#Description)<br> 2.[Purpose](#Purpose)<br> 3.[Features](#Features)<br> 4.[Usage](#Usage)<br>5.[Where to Play](#where-to-play-)
 
 # Description
 
@@ -35,6 +35,6 @@ The modes included in this project are:
 
 Apply colors by hovering over the grid. Activate the modes by clicking on their respective buttons. You can learn about the modes [here](#features).
 
-# Where To Play [](#where-to-play)
+# Where To Play [](#where-to-play-)
 
 This is a browser version, you can find it [here](https://eddy518.github.io/etch-a-sketch/).
