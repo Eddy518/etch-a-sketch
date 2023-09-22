@@ -85,10 +85,6 @@ input[type="range" i] {
   gap: 18px;
   align-self: center;
 }
-.fa-github {
-  width: 140px;
-  height: 140px;
-}
 .footer-docs,
 .footer-github {
   text-decoration: none;
