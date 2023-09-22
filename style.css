@@ -93,12 +93,14 @@ input[type="range" i] {
   text-decoration: none;
   list-style: none;
 }
+.footer-docs,
+.footer-divider {
+  font-size: 18px;
+}
 .footer-docs {
   color: #d0adf0;
-  font-size: 30px;
 }
 .footer-divider {
-  font-size: 30px;
   font-size: bolder;
   color: #504324;
 }
