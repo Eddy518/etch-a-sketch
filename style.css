@@ -4,6 +4,16 @@
   font-family: "Chameron";
   src: url("assets/fonts/Chameron\ .ttf");
 }
+:root {
+  --primary-clr: saddlebrown;
+  --secondary-clr: #504324;
+  --hover-clr: burlywood;
+  --black-clr: #000;
+  --btn-bg-clr: rgba(173, 135, 102, 0.025);
+  --btn-shdw-hov: rgb(96, 52, 36);
+  --btn-bg-hov: rgba(96, 52, 36, 0.383);
+  --footer-clr: #d0adf0;
+}
 h1 {
   font-family: "Chameron", Verdana, sans-serif;
 }
@@ -14,7 +24,7 @@ h1 {
   padding: 0;
 }
 .grid-container {
-  outline: 2px solid #504324;
+  outline: 2px solid var(--secondary-clr);
   width: 500px;
   height: 500px;
   display: flex;
@@ -24,15 +34,15 @@ h1 {
   border-radius: 50%;
 }
 .grid-outline {
-  outline: 1px solid #000;
+  outline: 1px solid var(--black-clr);
 }
 .pixel {
-  background-color: #000;
+  background-color: var(--black-clr);
 }
 button {
   padding: 10px 14px;
-  background-color: rgba(173, 135, 102, 0.025);
-  color: saddlebrown;
+  background-color: var(--btn-bg-clr);
+  color: var(--primary-clr);
   border: none;
   font-size: 22px;
   font-family: "Handjet", cursive;
@@ -41,17 +51,12 @@ button {
 button:hover:not(.color-picker, .grid-slider-btn) {
   /* * IGNORE COLORPICKER AND GRIDSLIDER BUTTON  */
   cursor: pointer;
-  background-color: rgba(96, 52, 36, 0.383);
-  color: burlywood;
-  box-shadow: 2px 2px 4px rgb(96, 52, 36);
+  background-color: var(--btn-bg-hov);
+  color: var(--hover-clr);
+  box-shadow: 2px 2px 4px var(--btn-shdw-hov);
 }
-.show-selection {
-  background-color: rgb(96, 52, 36);
-  color: burlywood;
-}
-
 .nav {
-  color: saddlebrown;
+  color: var(--primary-clr);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +82,7 @@ button:hover:not(.color-picker, .grid-slider-btn) {
   padding: 27px;
 }
 input[type="range" i] {
-  accent-color: saddlebrown;
+  accent-color: var(--primary-clr);
 }
 
 .footer {
@@ -98,9 +103,9 @@ input[type="range" i] {
   font-size: 18px;
 }
 .footer-docs {
-  color: #d0adf0;
+  color: var(--footer-clr);
 }
 .footer-divider {
   font-size: bolder;
-  color: #504324;
+  color: var(--secondary-clr);
 }
