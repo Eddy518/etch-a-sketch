@@ -81,5 +81,25 @@ input[type="range" i] {
 }
 
 .footer {
+  display: flex;
+  gap: 18px;
   align-self: center;
+}
+.fa-github {
+  width: 140px;
+  height: 140px;
+}
+.footer-docs,
+.footer-github {
+  text-decoration: none;
+  list-style: none;
+}
+.footer-docs {
+  color: #d0adf0;
+  font-size: 30px;
+}
+.footer-divider {
+  font-size: 30px;
+  font-size: bolder;
+  color: #504324;
 }
