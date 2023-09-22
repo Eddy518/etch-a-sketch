@@ -21,7 +21,7 @@ h1 {
   flex-wrap: wrap;
 }
 .grid {
-  border: none;
+  border-radius: 50%;
 }
 .grid-outline {
   outline: 1px solid #000;
@@ -70,10 +70,16 @@ button:hover:not(.color-picker, .grid-slider-btn) {
 /* DEBUGGING */
 .container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .nav {
   padding: 27px;
 }
 input[type="range" i] {
   accent-color: saddlebrown;
+}
+
+.footer {
+  align-self: center;
 }
