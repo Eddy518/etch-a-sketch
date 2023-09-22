@@ -12,6 +12,7 @@ This project is a browser version of a [sketchpad](https://en.wikipedia.org/wiki
 
 - To flex and practice my DOM manipulation skills.
 - To practice using CSS layout algorithms and selectors.
+- To learn how to use custom properties in CSS.
 - To have fun while at it!
 
 # Features
