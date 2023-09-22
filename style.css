@@ -84,6 +84,9 @@ input[type="range" i] {
   display: flex;
   gap: 18px;
   align-self: center;
+  position: fixed;
+  bottom: 0;
+  padding: 14px;
 }
 .footer-docs,
 .footer-github {
