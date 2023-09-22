@@ -82,7 +82,7 @@ input[type="range" i] {
 
 .footer {
   display: flex;
-  gap: 18px;
+  gap: 12px;
   align-self: center;
   position: fixed;
   bottom: 0;
