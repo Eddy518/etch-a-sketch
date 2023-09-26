@@ -109,3 +109,9 @@ input[type="range" i] {
   font-size: bolder;
   color: var(--secondary-clr);
 }
+#github-spinner {
+  transition: 0.7s; /* * Fix rotate 360 deg not working */
+}
+#github-spinner:hover {
+  transform: rotate(360deg);
+}
